@@ -21,9 +21,16 @@ public class EventController {
 	@GetMapping("/getEventDetails/{role}")
 	public List<EventDetailResponse> getAllEvents(@PathVariable String role,@RequestHeader String id,HttpServletRequest request){
 	
-		System.out.println("iD"+id);
-		
 		return eventSummaryService.getEventDetails(role,id);
 		
 	}
+	
+	@GetMapping("/getEventBeneficiary/{eid}")
+	public List<EventDetailResponse> getEventBeneficairyDetails(@PathVariable String eid ,HttpServletRequest request){
+	
+			
+		return eventSummaryService.getEventBeneficairyDetails(eid);
+		
+	}
+
 }

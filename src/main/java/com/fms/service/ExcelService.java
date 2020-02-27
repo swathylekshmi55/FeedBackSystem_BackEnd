@@ -59,11 +59,11 @@ public class ExcelService {
 	
 	System.out.println("fileName = "+fileName);
 	
-		if (fileName.equals("Volunteer_Enorrlement_Details_Not_Attend.xlsx")) {
+		if (fileName.equals("Volunteer_Enrolement_Details_Not_Attend.xlsx")) {
 			readExcel("NOT_ATTENDED",filePath);
 		} else if (fileName.equals("Volunteer_Attend.xlsx")) {
 			readExcel("ATTENDED",filePath);
-		} else if (fileName.equals("Volunteer_Unregistered.xlsx")) {
+		} else if (fileName.equals("volunteer_Enrollement_Details_unRegister.xlsx")) {
 			readExcel("UNREG",filePath);
 		} else if (fileName.equals("Outreach_Events_Summary.xlsx")) {
 			readExcel("SUMMERY",filePath);	
@@ -215,11 +215,11 @@ public class ExcelService {
 		//row.getCell(1).setCellType(CellType.STRING);
 		DataFormatter formatter = new DataFormatter();
 		String eventId 			= formatter.formatCellValue(row.getCell(0));
-		String employeeId 		= formatter.formatCellValue(row.getCell(1));
-		String baseLocation		= formatter.formatCellValue(row.getCell(2));
-		String beneficiaryName	= formatter.formatCellValue(row.getCell(3));
+		String eventname 		= formatter.formatCellValue(row.getCell(1));
+		String beneficiaryName	= formatter.formatCellValue(row.getCell(2));
+		String baseLocation		= formatter.formatCellValue(row.getCell(3));
 		String eventDate 		= formatter.formatCellValue(row.getCell(4));
-		String eventname 		= formatter.formatCellValue(row.getCell(5));
+		String employeeId 		= formatter.formatCellValue(row.getCell(5));
 		
 		eventInfoEntity
 				.setEventPK(new EventPK(eventId, employeeId + ""));
